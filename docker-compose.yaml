@@ -2,5 +2,7 @@ version: '16'
 services:
   node-server:
     build: ./backend
+    environment:
+      TZ: Asia/Seoul
     ports:
       - "3000:3000"
