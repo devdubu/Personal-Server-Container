@@ -1,0 +1,6 @@
+version: '16'
+services:
+  node-server:
+    build: ./backend
+    ports:
+      - "3000:3000"
