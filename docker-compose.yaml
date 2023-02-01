@@ -1,16 +1,37 @@
 version: '1.0.0'
 services:
+  nginx:
+    container_name: nginx
+    image: 
+      nginx
+    build: 
+      ./nginx/
+    restart: 
+      always
+    volumes:
+      - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
+    environment:
+      - TZ=Asia/Seoul
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - import_network
+
   node-server:
     container_name: back_node
+    image: 
+      back
     build: ./backend
     environment:
       TZ: Asia/Seoul
     ports:
       - "3000:3000"
-    links:
-      - mariadb
+    networks:
+      - import_network
     depends_on:
       - mariadb
+
 
   mariadb:
     container_name: mariadb
@@ -35,3 +56,11 @@ services:
       # 위 명령어를 사용하지 않으면, 일부 설정이 latin으로 설정됩니다.
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
+    networks:
+      - import_network
+    
+
+
+networks:
+  import_network:
+    driver: bridge
