@@ -25,50 +25,43 @@ services:
     # 연결된 network
     networks:
       - import_network
+      - pipeline_network
 
-  node-server:
-    container_name: back_node
-    image: 
-      back
-    build: ./backend
-    environment:
-      TZ: Asia/Seoul
-    ports:
-      - "3000:3000"
-    networks:
-      - import_network
-    depends_on:
-      - mariadb
-
-
-  mariadb:
-    container_name: mariadb
-    image: mariadb:latest
-    restart: always
-    # 환경에 따라 변경
-    ports:
-      - "3306"
+  jenkins:
+    # Container 이름
+    container_name: jenkins
+    # image 이름
+    image: jenkins/jenkins:jdk11
+    # volume 할당
     volumes:
-      - ./db/mysql.sql:/docker-entrypoint-initdb.d/mysql.sql
-      # DB 데이터 저장 디렉터리
-      - ./data:/var/lib/mysql
-      # 설정 파일 저장될 위치
-      - ./config:/etc/mysql/conf.d
+      - /jenkins:/var/jenkins_home
+    ports:
+      - "8080:8080"
+      - "50000:50000"
     environment:
-      MYSQL_DATABAS: import
-      # 정의하지 않으면 실행 시, 에러가 발생합니다.
-      MYSQL_ROOT_PASSWORD: import1015
-      # 컨테이너 내의 시스템 타임존을 우리나라에 맞게 설정합니다.
-      TZ: Asia/Seoul
-    command:
-      # 위 명령어를 사용하지 않으면, 일부 설정이 latin으로 설정됩니다.
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
+      - TZ=Asia/Seoul
+    user: root
     networks:
-      - import_network
+      - pipeline_network
+
+  nexus:
+    # container name
+    container_name: nexus
+    # image name
+    image: klo2k/nexus3
+    volumes:
+      - /nexus/nexus-data:/nexus-data
+    environment:
+      - TZ=Asia/Seoul
+    ports:
+      - "5050:5050"
+      - "8081:8081"
+    user: root
+    networks:
+      - pipeline_network
     
 
-
 networks:
-  import_network:
+  # pipeline 전용 private network
+  pipeline_network:
     driver: bridge
