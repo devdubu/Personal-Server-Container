@@ -67,3 +67,6 @@ networks:
   # pipeline 전용 private network
   pipeline_network:
     driver: bridge
+  import_network:
+    driver: bridge
+
