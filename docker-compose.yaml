@@ -1,32 +1,5 @@
 version: '1.0.0'
 services:
-  nginx:
-    # container 이름
-    container_name: nginx
-    # image 이름
-    image: 
-      nginx
-    # build 방법(Dockerfile 의 경로)
-    build: 
-      ./nginx/
-    # 재시작 기준(항상)
-    restart: 
-      always
-    # 어떤 볼륨을 가지고 갈건지
-    volumes:
-      - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
-    # 사용 시간
-    environment:
-      - TZ=Asia/Seoul
-    # portfowarding
-    ports:
-      - "80:80"
-      - "443:443"
-    # 연결된 network
-    networks:
-      - import_network
-      - pipeline_network
-
   jenkins:
     # Container 이름
     container_name: jenkins
@@ -34,7 +7,7 @@ services:
     image: jenkins/jenkins:jdk11
     # volume 할당
     volumes:
-      - /jenkins:/var/jenkins_home
+      - ./jenkins:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock ubuntu/jenkins_home
       - /usr/bin/docker:/usr/bin/docker
     ports:
@@ -52,7 +25,7 @@ services:
     # image name
     image: klo2k/nexus3
     volumes:
-      - /nexus/nexus-data:/nexus-data
+      - ./nexus/nexus-data:/nexus-data
     environment:
       - TZ=Asia/Seoul
     ports:
@@ -67,6 +40,3 @@ networks:
   # pipeline 전용 private network
   pipeline_network:
     driver: bridge
-  import_network:
-    driver: bridge
-
