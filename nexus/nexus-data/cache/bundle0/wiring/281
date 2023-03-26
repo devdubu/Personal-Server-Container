@@ -165,7 +165,7 @@ osgi.wiring.package; (&(osgi.wiring.package=org.codehaus.groovy.runtime.typehand
 osgi.wiring.package; (&(osgi.wiring.package=javax.annotation)(version>=1.2.0))
 0; version=1.2.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.cache)(version>=3.43.0))
-256; version=3.43.0
+254; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.security.realm)(version>=3.43.0))
 132; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.codehaus.groovy.reflection)(version>=2.4.0))
@@ -175,7 +175,7 @@ osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.goodies.lifecycle)(vers
 osgi.wiring.package; (&(osgi.wiring.package=com.sonatype.nexus.repository.nuget.security)(version>=3.43.0))
 296; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.view)(version>=3.43.0))
-254; version=3.43.0
+258; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.security)(version>=3.43.0))
 132; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.transaction)(version>=3.43.0))

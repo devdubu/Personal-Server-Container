@@ -18,6 +18,7 @@ services:
     user: root
     networks:
       - pipeline_network
+      - import_cicd_network
 
   nexus:
     # container name
@@ -34,9 +35,14 @@ services:
     user: root
     networks:
       - pipeline_network
+      - import_cicd_network
     
 
 networks:
   # pipeline 전용 private network
   pipeline_network:
     driver: bridge
+  import_cicd_network:
+    driver: bridge
+    external:
+      true

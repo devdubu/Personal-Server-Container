@@ -71,7 +71,7 @@ osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.common.text)(vers
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.common.property)(version>=3.43.0))
 104; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.view)(version>=3.43.0))
-254; version=3.43.0
+258; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.security)(version>=3.43.0))
 132; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=com.google.inject)(version>=1.4.0))

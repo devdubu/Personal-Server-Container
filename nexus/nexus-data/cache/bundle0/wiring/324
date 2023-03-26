@@ -35,11 +35,11 @@ osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.common.entity)(ve
 osgi.wiring.package; (&(osgi.wiring.package=javax.annotation)(version>=1.2.0))
 0; version=1.2.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.cache)(version>=3.43.0))
-256; version=3.43.0
+254; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.codehaus.groovy.reflection)(version>=2.4.0))
 121; version=2.4.17
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.view)(version>=3.43.0))
-254; version=3.43.0
+258; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.transaction)(version>=3.43.0))
 254; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.config)(version>=3.43.0))

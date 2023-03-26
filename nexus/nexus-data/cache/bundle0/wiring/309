@@ -51,7 +51,7 @@ osgi.wiring.package; (&(osgi.wiring.package=com.google.common.io)(version>=30.1.
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.extdirect)(version>=3.43.0))
 193; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.view)(version>=3.43.0))
-254; version=3.43.0
+258; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.security)(version>=3.43.0))
 132; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.transaction)(version>=3.43.0))

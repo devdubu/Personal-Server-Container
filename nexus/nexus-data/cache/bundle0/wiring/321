@@ -33,7 +33,7 @@ osgi.wiring.package; (&(osgi.wiring.package=org.codehaus.groovy.reflection)(vers
 osgi.wiring.package; (&(osgi.wiring.package=com.fasterxml.jackson.core)(version>=2.14.0))
 96; version=2.14.0.rc2
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.view)(version>=3.43.0))
-254; version=3.43.0
+258; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.transaction)(version>=3.43.0))
 254; version=3.43.0
 osgi.wiring.package; (&(osgi.wiring.package=org.sonatype.nexus.repository.config)(version>=3.43.0))
